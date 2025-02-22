@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Multi Ani, Puisor</title>
+  <!-- Font fancy de tip handwriting -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #FF1C00, #FFB6C1);
+      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      overflow-y: scroll;
+    }
+    /* Personalizare scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    /* Titluri */
+    h1, h2 {
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 48px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+    /* Linie separatorie albă */
+    .separator {
+      border: none;
+      height: 2px;
+      background-color: #fff;
+      margin: 20px 0;
+    }
+    /* Containerul pentru mesaj, centrat și cu lățime restrânsă pentru a evita suprapunerea cu pozele ancorate */
+    .message-container {
+      margin: 20px auto;
+      width: calc(100% - 300px); /* lăsăm spațiu pentru coloanele laterale */
+      text-align: center;
+    }
+    .message {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    /* Coloanele cu poze ancorate */
+    .side {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .side.left {
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .side.right {
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .side img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      border-radius: 10px;
+    }
+    /* Zig-zag efect pentru coloana stângă */
+    .side.left img:nth-child(odd) {
+      transform: rotate(-5deg);
+    }
+    .side.left img:nth-child(even) {
+      transform: rotate(5deg) translateX(-20px);
+    }
+    /* Zig-zag efect pentru coloana dreaptă */
+    .side.right img:nth-child(odd) {
+      transform: rotate(5deg);
+    }
+    .side.right img:nth-child(even) {
+      transform: rotate(-5deg) translateX(20px);
+    }
+  </style>
+</head>
+<body>
+  <h1>La Multi Ani, Puisor</h1>
+  <h2>Te Iubeeeesc!</h2>
+  <hr class="separator">
+  <div class="message-container">
+    <div class="message">mesaj</div>
+  </div>
+  <hr class="separator">
+  
+  <div class="side left">
+    <img src="https://via.placeholder.com/100" alt="Poza 1">
+    <img src="https://via.placeholder.com/100" alt="Poza 2">
+    <img src="https://via.placeholder.com/100" alt="Poza 3">
+    <img src="https://via.placeholder.com/100" alt="Poza 4">
+  </div>
+  <div class="side right">
+    <img src="https://via.placeholder.com/100" alt="Poza 5">
+    <img src="https://via.placeholder.com/100" alt="Poza 6">
+    <img src="https://via.placeholder.com/100" alt="Poza 7">
+    <img src="https://via.placeholder.com/100" alt="Poza 8">
+  </div>
+</body>
+</html>
