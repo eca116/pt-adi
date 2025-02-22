@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Multi Ani, Puisor</title>
-  <!-- Font fancy de tip handwriting -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,7 +12,7 @@
       background: linear-gradient(to right, #FF1C00, #FFB6C1);
       font-family: 'Dancing Script', cursive;
       font-weight: bold;
-      overflow-y: scroll;
+      overflow-x: hidden;
     }
     /* Personalizare scrollbar */
     ::-webkit-scrollbar {
@@ -50,56 +49,56 @@
       border: none;
       height: 2px;
       background-color: #fff;
-      margin: 20px 0;
-    }
-    /* Containerul pentru mesaj, centrat și cu lățime restrânsă pentru a evita suprapunerea cu pozele ancorate */
-    .message-container {
       margin: 20px auto;
-      width: calc(100% - 300px); /* lăsăm spațiu pentru coloanele laterale */
-      text-align: center;
+      width: 80%;
     }
-    .message {
-      color: #fff;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    /* Coloanele cu poze ancorate */
-    .side {
-      position: fixed;
+    /* Container general mesaje + imagini */
+    .content {
+      width: 80%;
+      margin: 20px auto;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .side.left {
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
+    /* Rand cu mesaj + imagine */
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .side.right {
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
+    /* Mesaj */
+    .message {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.6;
+      width: 60%;
+      text-align: center;
     }
-    .side img {
+    /* Imagine */
+    .image-container {
       width: 100px;
       height: 100px;
-      object-fit: cover;
-      border: 3px solid #fff;
       border-radius: 10px;
+      overflow: hidden;
+      border: 3px solid #fff;
     }
-    /* Zig-zag efect pentru coloana stângă */
-    .side.left img:nth-child(odd) {
-      transform: rotate(-5deg);
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .side.left img:nth-child(even) {
-      transform: rotate(5deg) translateX(-20px);
+    /* Alternare: primele mesaje stânga, restul dreapta */
+    .row:nth-child(odd) .message {
+      order: 1; /* Mesaj pe stânga */
     }
-    /* Zig-zag efect pentru coloana dreaptă */
-    .side.right img:nth-child(odd) {
-      transform: rotate(5deg);
+    .row:nth-child(odd) .image-container {
+      order: 2; /* Poză pe dreapta */
     }
-    .side.right img:nth-child(even) {
-      transform: rotate(-5deg) translateX(20px);
+    .row:nth-child(even) .message {
+      order: 2; /* Mesaj pe dreapta */
+    }
+    .row:nth-child(even) .image-container {
+      order: 1; /* Poză pe stânga */
     }
   </style>
 </head>
@@ -107,22 +106,42 @@
   <h1>La Multi Ani, Puisor</h1>
   <h2>Te Iubeeeesc!</h2>
   <hr class="separator">
-  <div class="message-container">
-    <div class="message">mesaj</div>
+
+  <div class="content">
+    <div class="row">
+      <div class="message">Mesaj 1</div>
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 1"></div>
+    </div>
+    <div class="row">
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 2"></div>
+      <div class="message">Mesaj 2</div>
+    </div>
+    <div class="row">
+      <div class="message">Mesaj 3</div>
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 3"></div>
+    </div>
+    <div class="row">
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 4"></div>
+      <div class="message">Mesaj 4</div>
+    </div>
+    <div class="row">
+      <div class="message">Mesaj 5</div>
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 5"></div>
+    </div>
+    <div class="row">
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 6"></div>
+      <div class="message">Mesaj 6</div>
+    </div>
+    <div class="row">
+      <div class="message">Mesaj 7</div>
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 7"></div>
+    </div>
+    <div class="row">
+      <div class="image-container"><img src="https://via.placeholder.com/100" alt="Poza 8"></div>
+      <div class="message">Mesaj 8</div>
+    </div>
   </div>
+
   <hr class="separator">
-  
-  <div class="side left">
-    <img src="https://via.placeholder.com/100" alt="Poza 1">
-    <img src="https://via.placeholder.com/100" alt="Poza 2">
-    <img src="https://via.placeholder.com/100" alt="Poza 3">
-    <img src="https://via.placeholder.com/100" alt="Poza 4">
-  </div>
-  <div class="side right">
-    <img src="https://via.placeholder.com/100" alt="Poza 5">
-    <img src="https://via.placeholder.com/100" alt="Poza 6">
-    <img src="https://via.placeholder.com/100" alt="Poza 7">
-    <img src="https://via.placeholder.com/100" alt="Poza 8">
-  </div>
 </body>
 </html>
